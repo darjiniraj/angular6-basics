@@ -1,0 +1,21 @@
+<app-date></app-date>
+
+<app-address-card></app-address-card>
+
+
+<app-address-input-style1 name= "Ashu Roy"></app-address-input-style1>
+
+
+
+<app-address-input-style2 [user] ='user'></app-address-input-style2>
+
+<app-view></app-view>
+
+
+<div *ngIf = "response">
+<p *ngFor = "let product of response">
+    ProductId : {{product.productId}}
+    ProductName : {{product.productName}}
+</p>
+</div>
+

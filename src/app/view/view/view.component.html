@@ -1,0 +1,21 @@
+UserName :
+<input type="text" [(ngModel)]="userName">
+<button (click)="search()">Search</button>
+
+<div *ngIf="response">
+
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            Name :
+            <h5 class="card-title">{{response.login}}</h5>
+            Public repose :
+            <h3 class="card-subtitle mb-2 text-muted">{{response.public_repos}}</h3>
+            Following :
+            <p class="card-subtitle mb-2 text-muted">{{response.following}}</p>
+            Image :
+            <img src={{response.avatar_url}}/>
+        </div>
+    </div>
+
+</div>

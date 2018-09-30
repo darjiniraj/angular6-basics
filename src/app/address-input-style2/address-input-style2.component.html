@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{user.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{user.title}}</h6>
+
+    <p class="card-text">{{user.address}}</p>
+    <div *ngIf ="user.phone?.length">
+      <p >Phone Number : </p>
+      <p *ngFor = "let phone of user.phone" >{{phone}}</p>
+      
+    </div>   
+  </div>
+</div>
