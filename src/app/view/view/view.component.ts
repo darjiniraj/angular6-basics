@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HelloService } from '../../hello.service';
 import { HttpClient } from '@angular/common/http';
+import { MyServiceService } from '../../my-service.service';
 
 @Component({
   selector: 'app-view',
@@ -13,7 +14,8 @@ export class ViewComponent implements OnInit {
   response: any;
 
   constructor(private helloService: HelloService,
-    private httpClient: HttpClient) {
+    private httpClient: HttpClient,
+    private myService : MyServiceService) {
 
     helloService.printConsole("from the second module")
 
@@ -23,6 +25,7 @@ export class ViewComponent implements OnInit {
   }
 
   search() {
+    this.myService.sayHi();
     this.helloService.printConsole("search() invoked")
     this.httpClient.get('https://api.github.com/users/' + this.userName)
       .subscribe((response) => {
