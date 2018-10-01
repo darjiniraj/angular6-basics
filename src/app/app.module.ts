@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyPersonalComponent } from './my-personal/my-personal.component';
 import { ValidationComponent } from './validation/validation.component';
 import { ReactiveValidationComponent } from './reactive-validation/reactive-validation.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ReactiveValidationComponent } from './reactive-validation/reactive-vali
     AddressInputStyle2Component,
     MyPersonalComponent,
     ValidationComponent,
-    ReactiveValidationComponent
+    ReactiveValidationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
