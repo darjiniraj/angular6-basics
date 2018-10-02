@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-address-card',
@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressCardComponent implements OnInit {
 
-  user: any
-  isCollapse: boolean = true;
-  buttonText: string = 'Expand'
+  user: any;
+  isCollapse = true;
+  buttonText = 'Expand';
 
-  nameText : string = "Hello"
+  nameText = 'Hello';
 
   constructor() {
     this.user = {
@@ -23,16 +23,13 @@ export class AddressCardComponent implements OnInit {
         '9913399133',
         '154656465'
       ]
-    }
+    };
   }
 
   toggleCollapese() {
     this.isCollapse = !this.isCollapse;
 
-    if (this.isCollapse)
-      this.buttonText = 'Expand'
-    else
-      this.buttonText = 'Collapse'
+    this.buttonText = this.isCollapse ? 'Expand' : 'Collapse';
   }
 
   ngOnInit() {

@@ -1,0 +1,31 @@
+<form (ngSubmit)='loginUser()' [formGroup]='loginForm' novalidate class="form">
+  <input formControlName='email' type="text" class="form-control" placeholder="Enter Email" />
+  <div class="alert  alert-danger" *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email').touched">
+      Email is required
+  </div>
+  <input formControlName='password' type="password" class="form-control" placeholder="Enter Password" />
+  <input formControlName='phonenumber' type="text" class="form-control" placeholder="Enter Phone Number" />
+  
+  <br />
+  <label class='control-label'>Proviance</label>
+  <br />
+  <label class="radio-inline">
+      <input type="radio" value="on" formControlName="proviance">ON
+  </label>
+  <label class="radio-inline">
+      <input type="radio" value="off" formControlName="proviance">OFF
+  </label>
+
+  <br />
+
+  <input formControlName='pincode' type="text" class="form-control" placeholder="Enter Pincode" required />
+
+  <div class="alert  alert-danger" *ngIf="loginForm.get('pincode').hasError('required') && loginForm.get('pincode').touched">
+    Pincode is required
+</div>
+
+<div class="alert  alert-danger" *ngIf="loginForm.get('pincode').errors?.pattern">
+    Pincode is  not valid.
+</div> 
+  <button [disabled]='loginForm.invalid' class="btn btn-default">Login</button>
+</form>
